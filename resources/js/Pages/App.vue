@@ -3,12 +3,20 @@
   import NewCar from '@/Components/newCar.vue';
   import newRent from '@/Components/newRent.vue';
   import showRents from '@/Components/showRents.vue';
-
+  import axios from 'axios';
+  
   const autok = ref([]);
   const kolcsonzesek = ref([]);
 
-  const reciveData = (data) => {
+  const reciveData = async (data) => {
     autok.value.push(data);
+    try {
+      const response = await axios.post('/api/car/save',{
+        'modell':
+      });
+    } catch (error) {
+      
+    }
   }
   const reciveDataFromRents = (data) => {
     kolcsonzesek.value.push(data);

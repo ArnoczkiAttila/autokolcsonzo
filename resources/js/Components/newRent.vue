@@ -41,11 +41,11 @@
     
     <div class="form-floating mb-3">
         <input type="date" class="form-control" v-model="kezdete" id="floatingPassword" placeholder="Password">
-        <label for="floatingPassword">Kaució</label>
+        <label for="floatingPassword">Kezdet</label>
     </div>
     <div class="form-floating mb-3">
         <input type="date" class="form-control" v-model="vege" id="floatingPassword" placeholder="Password">
-        <label for="floatingPassword">Kilométerdíj</label>
+        <label for="floatingPassword">Vége</label>
     </div>
     <div class="mb-3">
         <button class="btn btn-success" @click="mentes">Mentés</button>
