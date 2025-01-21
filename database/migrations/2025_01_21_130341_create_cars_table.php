@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('modell');
             $table->integer('kaucio');
-            $table->integer('kilometer');
+            $table->integer('kilometerdij');
             $table->integer('napidij');
             $table->longText('leiras');
             $table->timestamps();

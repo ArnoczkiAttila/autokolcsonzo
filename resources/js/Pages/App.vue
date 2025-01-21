@@ -1,5 +1,5 @@
 <script setup>
-  import { ref } from 'vue';
+  import { onMounted, ref } from 'vue';
   import NewCar from '@/Components/newCar.vue';
   import newRent from '@/Components/newRent.vue';
   import showRents from '@/Components/showRents.vue';
@@ -9,19 +9,42 @@
   const kolcsonzesek = ref([]);
 
   const reciveData = async (data) => {
-    autok.value.push(data);
     try {
       const response = await axios.post('/api/car/save',{
-        'modell':
+        'modell':data.modell,
+        'kaucio':data.kaucio,
+        'kilometerdij':data.kilometerdij,
+        'napidij':data.napidij,
+        'leiras':data.leiras
       });
+      getCar();
     } catch (error) {
-      
+      console.log(error);
     }
   }
-  const reciveDataFromRents = (data) => {
-    kolcsonzesek.value.push(data);
+  const getCar = async () => {
+    try {
+      const response = await axios.get('/api/car/index');
+      autok.value = response.data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  const reciveDataFromRents = async (data) => {
+    try {
+      const response = await axios.post('/api/rent/save',{
+        'car_id':data.id,
+        'email':data.email,
+        'kezdet':data.kezdet,
+        'vege':data.vege,
+      });
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
   }
   const megjelenit = ref(false);
+  getCar();
 </script>
 
 <template>

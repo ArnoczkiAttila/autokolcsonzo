@@ -14,7 +14,7 @@
 
     const mentes = () => {
         if (email.value && selectedAuto.value && kezdete.value && vege.value) {
-            emits('mentes',{'email':email.value,'kezdete':kezdete.value,'vege':vege.value,'auto':selectedAuto.value});
+            emits('mentes',{'email':email.value,'kezdet':kezdete.value,'vege':vege.value,'id':selectedAuto.value});
             email.value = "";
             selectedAuto.value = "";
             kezdete.value = "";
@@ -32,7 +32,7 @@
     </div>
     <div class="form-floating mb-3">
         <select name="" id="" class="form-select" v-model="selectedAuto">
-            <option v-for="(auto,index) in autok" :value="auto.modell" >
+            <option v-for="(auto,index) in autok" :value="auto.id" >
                 {{ auto.modell }}
             </option>
         </select>

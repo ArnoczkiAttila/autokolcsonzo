@@ -9,7 +9,7 @@ class Car extends Model
     protected $fillable = [
         'modell',
         'kaucio',
-        'kilomter',
+        'kilometerdij',
         'napidij',
         'leiras',
     ];
