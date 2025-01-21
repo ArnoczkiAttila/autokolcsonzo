@@ -17,7 +17,7 @@ class RentController extends Controller
         return response()->json($rent,200);
     }
     public function index() {
-        $rents = Rent::all();
+        $rents = Rent::all()->load('car');
         return response()->json($rents,200);
     }
 }

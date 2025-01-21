@@ -30,6 +30,14 @@
       console.log(error);
     }
   }
+  const getRents = async () => {
+    try {
+      const response = await axios.get('/api/rent/index');
+      kolcsonzesek.value = response.data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
   const reciveDataFromRents = async (data) => {
     try {
       const response = await axios.post('/api/rent/save',{
@@ -45,6 +53,7 @@
   }
   const megjelenit = ref(false);
   getCar();
+  getRents();
 </script>
 
 <template>

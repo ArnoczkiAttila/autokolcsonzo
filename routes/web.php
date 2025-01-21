@@ -14,4 +14,6 @@ Route::post('/api/car/save',[CarController::class,'saveCar']);
 Route::post('/api/rent/save',[RentController::class,'saveRent']);
 
 Route::get('/api/car/index',[CarController::class,'index']);
+Route::get('/api/rent/index',[RentController::class,'index']);
+
 require __DIR__.'/auth.php';
